@@ -1,0 +1,23 @@
+{% extends "food/base.html" %}
+
+{% block title %}Inicio - Categorias{% endblock %}
+
+{% block content %}
+  <h2>Lista de Categorias</h2>
+  <a href="{% url 'food:create_category' %}" class="btn btn-primary mb-3">Añadir nuevo</a>
+ {% if categories %}
+  {% for category in categories %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <strong>Tipo:</strong> {{ category.tipo }}
+        <br>
+        <p><a href="{% url 'food:detail_category' category.id %}">Visualizar</a></p>
+      </div>
+    {% empty %}
+        <p>No hay categorias.</p>
+    </div>
+  {% endfor %}
+ {% else %}
+        <p>No hay categorias aún.</p>
+ {% endif%}
+{% endblock %}

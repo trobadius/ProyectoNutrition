@@ -1,0 +1,23 @@
+{% extends "food/base.html" %}
+
+{% block title %}Inicio - Tipo Comida{% endblock %}
+
+{% block content %}
+  <h2>Lista de Tipos de Comida</h2>
+  <a href="{% url 'food:create_type_meal' %}" class="btn btn-primary mb-3">Añadir nuevo</a>
+ {% if typemeals %}
+  {% for typemeal in typemeals %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <strong>Tipo Comida:</strong> {{ typemeal.meal_type }}
+        <br>
+        <p><a href="{% url 'food:detail_type_meal' typemeal.id %}">Visualizar</a></p>
+      </div>
+    {% empty %}
+        <p>No hay tipos de comida.</p>
+    </div>
+  {% endfor %}
+ {% else %}
+        <p>No hay tipos de comida aún.</p>
+ {% endif%}
+{% endblock %}

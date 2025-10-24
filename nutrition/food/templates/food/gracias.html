@@ -1,0 +1,9 @@
+{% extends 'food/base.html' %}
+{% block title %}Gracias{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+  <h1>¡Gracias {{ nombre|default:"usuario" }}!</h1>
+  <p>Tu formulario fue enviado correctamente.</p>
+  <a href="/" class="btn btn-primary mt-3">Volver al inicio</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "food/base.html" %}
+
+{% block title %}{{ object.titulo }} - Tipo comida{% endblock %}
+
+{% block content %}
+  <h2>{{ object.meal_type }}</h2>
+  <strong>Meal Type:</strong>{{ object.meal_type }}
+  <br>
+  <p>{{ object.contenido }}</p>
+  
+  <a href="{% url 'food:update_type_meal' object.id %}" class="btn btn-warning">Editar</a>
+  <a href="{% url 'food:delete_type_meal' object.id %}" class="btn btn-danger">Eliminar</a>
+  <a href="{% url 'food:lista_type_meal' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}

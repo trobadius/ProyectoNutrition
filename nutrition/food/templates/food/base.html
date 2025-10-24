@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Nutricion</title>
+  <style>
+    /* ======= RESETEO Y ESTILOS BÁSICOS ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ======= NAVBAR ======= */
+    header {
+      background-color: #111b25;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ======= CONTENIDO PRINCIPAL ======= */
+    main {
+      flex: 1;
+      padding: 2rem;
+      background-color: #fff;
+      max-width: 1200px;
+      margin: 2rem auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    main h2 {
+      color: #0066cc;
+      margin-bottom: 1rem;
+    }
+
+    /* ======= FOOTER ======= */
+    footer {
+      background-color: #111b25;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    footer small {
+      font-size: 0.9rem;
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- ======= NAVBAR ======= -->
+  <header>
+    <h1>NutriBar</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/category">Categoria</a></li>
+        <li><a href="/typemeal">Tipo de comida</a></li>
+        <li><a href="/form">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= CONTENIDO ======= -->
+  <main>
+        {% block content%}
+
+    
+       {%endblock%}
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <small>© 2025 NutriNutri · Todos los derechos reservados</small>
+  </footer>
+ 
+</body>
+</html>
