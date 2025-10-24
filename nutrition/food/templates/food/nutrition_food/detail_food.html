@@ -1,0 +1,26 @@
+{% extends "food/base.html" %}
+
+{% block title %}{{ object.titulo }} - Food{% endblock %}
+
+{% block content %}
+  <h2>{{ object.user_id }}</h2>
+  <strong>Fecha:</strong>{{ object.date }}
+  <strong>item:</strong>{{ object.food_item }}
+  <strong>category:</strong>{{ object.category }}
+  <strong>calories:</strong>{{ object.calories }}
+  <strong>protein:</strong>{{ object.protein }}
+  <strong>carbohydrates:</strong>{{ object.carbohydrates }}
+  <strong>fat:</strong>{{ object.fat }}
+  <strong>fiber:</strong>{{ object.fiber }}
+  <strong>sugars:</strong>{{ object.sugars }}
+  <strong>sodium:</strong>{{ object.sodium }}
+  <strong>cholesterol:</strong>{{ object.cholesterol }}
+  <strong>meal_type:</strong>{{ object.meal_type }}
+  <strong>water_intake:</strong>{{ object.water_intake }}
+  <br>
+  <p>{{ object.contenido }}</p>
+
+  <a href="{% url 'food:update_food' object.id %}" class="btn btn-warning">Editar</a>
+  <a href="{% url 'food:delete_food' object.id %}" class="btn btn-danger">Eliminar</a>
+  <a href="{% url 'food:lista_food' %}" class="btn btn-secondary">Volver</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "food/base.html" %}
+
+{% block title %}Eliminar Categoria{% endblock %}
+
+{% block content %}
+  <h2>¿Eliminar "{{ object.titulo }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'food:lista_category' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}
