@@ -104,6 +104,19 @@
         <li><a href="/category">Categoria</a></li>
         <li><a href="/typemeal">Tipo de comida</a></li>
         <li><a href="/form">Contacto</a></li>
+        {% if user.is_authenticated %}
+        👤 Hola, {{ user.username }}
+          <li>
+              <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">Cerrar sesión</button>
+              </form>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+          </li>
+        {% endif %}
       </ul>
     </nav>
   </header>
